@@ -1,5 +1,5 @@
 ﻿using System;
-
+// 类数组的简单测试
 namespace Book
 {
     class MyClass
