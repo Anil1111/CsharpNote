@@ -79,6 +79,8 @@
     <Compile Include="Ch10Ex01.cs" />
     <Compile Include="Ch11Ex01.cs" />
     <Compile Include="Ch12Ex01.cs" />
+    <Compile Include="Ch12Ex02.cs" />
+    <Compile Include="Ch12Ex03.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
