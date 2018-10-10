@@ -1,0 +1,6 @@
+D:\DATA\file\C#\chapter04\chapter04\bin\Debug\chapter04.exe.config
+D:\DATA\file\C#\chapter04\chapter04\bin\Debug\chapter04.exe
+D:\DATA\file\C#\chapter04\chapter04\bin\Debug\chapter04.pdb
+D:\DATA\file\C#\chapter04\chapter04\obj\Debug\chapter04.exe
+D:\DATA\file\C#\chapter04\chapter04\obj\Debug\chapter04.pdb
+D:\DATA\file\C#\chapter04\chapter04\obj\Debug\chapter04.csprojResolveAssemblyReference.cache

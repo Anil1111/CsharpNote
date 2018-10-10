@@ -1,0 +1,7 @@
+D:\DATA\file\C#\chapter06\chapter06\bin\Debug\chapter06.exe.config
+D:\DATA\file\C#\chapter06\chapter06\bin\Debug\chapter06.exe
+D:\DATA\file\C#\chapter06\chapter06\bin\Debug\chapter06.pdb
+D:\DATA\file\C#\chapter06\chapter06\obj\Debug\chapter06.csprojAssemblyReference.cache
+D:\DATA\file\C#\chapter06\chapter06\obj\Debug\chapter06.csproj.CoreCompileInputs.cache
+D:\DATA\file\C#\chapter06\chapter06\obj\Debug\chapter06.exe
+D:\DATA\file\C#\chapter06\chapter06\obj\Debug\chapter06.pdb

@@ -1,0 +1,6 @@
+D:\DATA\file\C#\Ch10CardLib\Ch10CardLib\obj\Debug\Ch10CardLib.csprojAssemblyReference.cache
+D:\DATA\file\C#\Ch10CardLib\Ch10CardLib\obj\Debug\Ch10CardLib.csproj.CoreCompileInputs.cache
+D:\DATA\file\C#\Ch10CardLib\Ch10CardLib\bin\Debug\Ch10CardLib.dll
+D:\DATA\file\C#\Ch10CardLib\Ch10CardLib\bin\Debug\Ch10CardLib.pdb
+D:\DATA\file\C#\Ch10CardLib\Ch10CardLib\obj\Debug\Ch10CardLib.dll
+D:\DATA\file\C#\Ch10CardLib\Ch10CardLib\obj\Debug\Ch10CardLib.pdb
