@@ -5,3 +5,9 @@ D:\DATA\file\C#\Book\Book\bin\Debug\Book.pdb
 D:\DATA\file\C#\Book\Book\obj\Debug\Book.csprojResolveAssemblyReference.cache
 D:\DATA\file\C#\Book\Book\obj\Debug\Book.exe
 D:\DATA\file\C#\Book\Book\obj\Debug\Book.pdb
+E:\JZS\CsharpNote\Book\Book\bin\Debug\Book.exe.config
+E:\JZS\CsharpNote\Book\Book\obj\Debug\Book.exe
+E:\JZS\CsharpNote\Book\Book\obj\Debug\Book.pdb
+E:\JZS\CsharpNote\Book\Book\bin\Debug\Book.exe
+E:\JZS\CsharpNote\Book\Book\bin\Debug\Book.pdb
+E:\JZS\CsharpNote\Book\Book\obj\Debug\Book.csprojResolveAssemblyReference.cache
