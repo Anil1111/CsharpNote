@@ -93,6 +93,10 @@
     <Compile Include="Ch15Ex02.cs" />
     <Compile Include="Ch15Ex03.cs" />
     <Compile Include="Ch15Ex04.cs" />
+    <Compile Include="Ch15Ex05.cs" />
+    <Compile Include="Ch15Ex06.cs" />
+    <Compile Include="Ch15Ex07.cs" />
+    <Compile Include="Ch15Ex08.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
