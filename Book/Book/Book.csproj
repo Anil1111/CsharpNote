@@ -97,6 +97,9 @@
     <Compile Include="Ch15Ex06.cs" />
     <Compile Include="Ch15Ex07.cs" />
     <Compile Include="Ch15Ex08.cs" />
+    <Compile Include="Ch16Ex01.cs" />
+    <Compile Include="Ch16Ex02.cs" />
+    <Compile Include="Ch16Ex03.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
