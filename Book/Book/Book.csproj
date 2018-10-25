@@ -118,6 +118,10 @@
     <Compile Include="Ch18Ex07.cs" />
     <Compile Include="Ch18Ex08.cs" />
     <Compile Include="Ch19Ex01.cs" />
+    <Compile Include="Ch19Ex02.cs" />
+    <Compile Include="Ch19Ex03.cs" />
+    <Compile Include="Ch19Ex04.cs" />
+    <Compile Include="Ch19Ex05.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
