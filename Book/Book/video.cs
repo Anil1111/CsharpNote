@@ -11,22 +11,27 @@ namespace Book
     {
         static void Main(string[] args)
         {
-            var list = new List<int>();
-            for (int i = 0; i < 8; i++)
-                list.Add(i);
+            //string firstName, lastName;
+            //Console.Write("Please input your first name:");
+            //firstName = Console.ReadLine();
+            //Console.Write("Please input your last name:");
+            //lastName = Console.ReadLine();
 
-            Add(list);
+            //int result = string.Compare(firstName, lastName, true);
 
-            foreach(var item in list)
-                Console.WriteLine(item);
+            //Console.WriteLine(result);
+            //string userName = " zhu shuai ";
+            //Console.Write(userName.Trim()+"123");
 
+            StringBuilder sb = new StringBuilder();
+            for (int i = 0; i < 10; i++)
+                sb.Append(i.ToString());
+
+            sb.Replace("123", "2222");
+            Console.WriteLine(sb);
 
             Console.ReadKey();
         }
 
-        static void Add(List<int> list)
-        {
-            list.Add(10);
-        }
     }
 }
