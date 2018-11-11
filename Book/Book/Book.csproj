@@ -123,6 +123,7 @@
     <Compile Include="Ch19Ex04.cs" />
     <Compile Include="Ch19Ex05.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="video.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
