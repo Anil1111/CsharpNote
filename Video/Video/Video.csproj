@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{8FDCCF31-3C89-4AB3-AE64-0DF3D3A2CDEA}</ProjectGuid>
+    <ProjectGuid>{7BA9776E-20CE-40E7-B10A-6B88961FA9EA}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Video</RootNamespace>

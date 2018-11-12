@@ -1,1 +1,6 @@
-D:\DATA\file\C#\Video\Video\bin\Debug\Video.exe.config
+E:\JZS\CsharpNote\Video\Video\bin\Debug\Video.exe.config
+E:\JZS\CsharpNote\Video\Video\bin\Debug\Video.exe
+E:\JZS\CsharpNote\Video\Video\bin\Debug\Video.pdb
+E:\JZS\CsharpNote\Video\Video\obj\Debug\Video.csprojResolveAssemblyReference.cache
+E:\JZS\CsharpNote\Video\Video\obj\Debug\Video.exe
+E:\JZS\CsharpNote\Video\Video\obj\Debug\Video.pdb

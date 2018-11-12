@@ -131,4 +131,55 @@
 11. 类中的非static函数可以调用任意函数，static函数只可以调用static函数
 12. C#中为什么Main()函数需要设置为static?
 	假设没有static关键字,那意味着需要用生成一个实例后才可以调用这个Ｍain方法,而Ｍain方法是程序入口点，你没有进入Ｍain方法,自然无法生成一个实例,既然没有实例，那就无法调用Ｍain函数，岂不矛盾?所以Ｍain函数被设置为static.
-13. 
+13. ref是为基本类型设计，然而由于string的不可变性，所以在函数中无法直接更改字符串，所以需要使用ref来为string类型进行重新赋值。
+14. 上下文关键字：只在特定的条件下才是关键字
+	```cs
+	class Test
+	{
+		private string _Name;
+		public Name
+		{
+			get{return _Name;}
+			set{_Name = value;}
+		}
+	}
+	class Program
+	{
+		static void Main()
+		{
+			int value;
+		}
+	}
+	```
+	如上文所示，在Main函数中可以定义名为value的变量，但是是set{}里面value就有特定的含义。
+15. 对象初始化器： object obj = new object(){Name = "xxxx"};
+	匿名对象：var user = new{Name = "xxx", age = 0};
+16. 静态构造函数只有类第一次实例化的时候才会被调用。
+17. readonly只能在声明、构造函数中赋值。
+18. virtual：只可以被继承，不可以被实例化。即可用于类，也可用于方法。
+	sealed：只可以被实例化，不可以被继承。即可用于类，也可用于方法。
+19. this：对应本类
+	base：对应基类
+20. 可以将派生类基类转换
+	```cs
+	class Animal
+	{
+		public string Name{get; set;}
+	}
+	class Dog:Animal
+	{}
+	...
+	static void Main()
+	{
+		Animal ani = new Animal();
+		Dog dog = new Dog();
+		dog.Name = "123";
+		ani = dog;
+		Console.WriteLine(ani.Name);
+	}
+	//out: 123;
+	```
+21. 多态的核心`virtual-override`,一个基类多种状态。
+22. override和new的区别，override在原址上进行覆写，new是开辟新的区域重新创建方法。
+23. is 用作类型判断`if(class1 is class2)`
+	as 用作类型转换`class1 as class2`
