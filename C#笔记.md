@@ -183,3 +183,15 @@
 22. override和new的区别，override在原址上进行覆写，new是开辟新的区域重新创建方法。
 23. is 用作类型判断`if(class1 is class2)`
 	as 用作类型转换`class1 as class2`
+24. abstract和virtual
+	abstract类无法实例化
+	abstract方法必须包含在abstract类中
+	abstract的方法可以没有主体，virtual方法必须要有主体，即使主体为空；
+	virtual可以被子类重写,abstract必须被子类重写
+	virtual只可以修饰方法
+25. interface目的是解决多继承的问题，用法几乎和类继承相同
+	interface是一系列方法、属性的集合
+	interface的访问修饰符都是fly
+26. C#中class和struct的默认访问修饰符是private
+	interface和enum的默认访问修饰符是public
+27. struct和enum是值类型

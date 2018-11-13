@@ -8,19 +8,25 @@ using System.IO;
 
 namespace Video
 {
-    class A
+    enum ConnectionState
     {
-        public override string ToString()
-        {
-
-            return base.ToString();
-        }
+        Connecting,
+        Connected,
+        Disconnecting,
+        Disconnected
     }
     class Program
     {
+        static void Test(ConnectionState connectionstate)
+        {
+            switch(connectionstate)
+            {
+                case ConnectionState.Connected:break;
+            }
+        }
         static void Main(string[] args)
         {
-            
+            ConnectionState connectionstate = new ConnectionState();
 
             Console.ReadKey();
         }
