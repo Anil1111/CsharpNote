@@ -195,3 +195,125 @@
 26. C#中class和struct的默认访问修饰符是private
 	interface和enum的默认访问修饰符是public
 27. struct和enum是值类型
+28. try1/catvh\*/finally1
+	异常捕获和抛出的异常最贴切的一个异常
+	```cs
+	try{throw new InvalidCastException();}
+	catch(InvalidCastException ex){}
+	catch(FieldAccessException ex){}
+	catch(Exception ex){}
+	finally{}
+	```
+	在上面的例子中程序抛出InvalidCastException异常之后由第一个catch捕获，虽然所有的异常都是继承自Exception，但异常的捕获只捕获和抛出异常最贴切的一个，所以不执行Exception的异常操作。
+29. 泛型的约束：为了使用特定的方法，所以对泛型进行类型约束
+30. 运算符重载：static public bool operator !=(Location loc1, Location loc2)
+	有一些特定的操作符是不可以被重载的
+31. 一个解决方案下的一个项目就是一个程序集。
+32. 委托和多播委托
+	```cs
+	delegate bool Function(int num);
+	......
+	Function func1 = new Function(isEven);
+	func1 -= isEven;			//退订
+	func1 += isGreaterThan10;	//订阅
+	```
+33. 系统自定义委托
+	- Action：封装一个方法，该方法只有一个参数并且没有返回值; 后面更有委托变量名
+	- Func< int, bool>:封装一个方法，该方法有一定的参数，并有一个输出参数(out);
+34. 发送者-订阅者模型-以报社送报纸为例---以接口类型实现
+	- 受众可能出现：个人、公司、政府机关...
+	- 受众规定有共同的行为：收报纸、读报纸
+	- 对于报社来说，无论是个人、公司、政府机关，本质上并没有区别，它们都是subscribers，所以只需要执行一种操作即可。
+	- 但是对于个人、公司、政府机关来说，它们进行收取报纸和读报纸的行为是存在区别的，所以不能以一个统一的函数来实现。
+	- 所以此时需要先把个人、公司、政府机关的行为抽象成一个interface，在interface中规定了个人、公司、政府机关有哪些共同的行为，在分别在个人、公司、政府机关中实现这些行为。
+		```cs
+		interface INewspaer
+    	{
+			//任何订阅者都会具有收报纸和读报纸两种行为
+        	void SetNewspaper(Newspaper newspaper);
+        	void ReadNewspaper();
+    	}
+		class Company:INewspaer
+    	{
+        	public string Name { get; set; }
+			public Newspaper newspaper { get; set; }
+			public Company(string Name)
+			{
+				this.Name = Name;
+			}
+			//公司实现了读报纸和收报纸的行为
+        	public void ReadNewspaper()
+        	{
+            	Console.WriteLine($"{this.Name} is reading newspaper, title is {this.newspaper.Title}, content is {this.newspaper.Content}");
+        	}
+        	public void SetNewspaper(Newspaper newspaper)
+        	{
+            	this.newspaper = newspaper;
+        	}
+    	}
+		class Person : INewspaer
+		{
+			public Person(string Name)
+			{
+				this.Name = Name;
+			}
+			string Name { get; set; }
+			public Newspaper newspaper { get; set; }
+			//个人实现了读报纸和收报纸的行为
+			public void SetNewspaper(Newspaper newspaper)
+			{
+				this.newspaper = newspaper;
+			}
+			public void ReadNewspaper()
+			{
+				Console.WriteLine($"{this.Name} is reading newspaper, title is {this.newspaper.Title}, content is {this.newspaper.Content}");
+			}
+		}
+		class Publisher
+		{
+			public Publisher(string Name)
+			{
+				this.Name = Name;
+			}
+			string Name { get; set; }
+			//可以直接把对象传入接口的集合中
+			public List<INewspaer> Subscribers = new List<INewspaer>();
+			public void SendNewspaper(Newspaper newspaper)
+			{
+				foreach(var item in Subscribers)
+				{
+					item.SetNewspaper(newspaper);
+				}
+			}
+
+		}
+		Main()
+		{
+            var publisher = new Publisher("chubansheX");
+			//设置个人订阅者
+            var A = new Person("A");
+            var B = new Person("B");
+			//设置公司订阅者
+            var C1 = new Company("C1");
+            var C2 = new Company("C2");
+			//为出版社添加订阅者
+            publisher.Subscribers.Add(A);
+            publisher.Subscribers.Add(B);
+            publisher.Subscribers.Add(C1);
+            publisher.Subscribers.Add(C2);
+
+            publisher.SendNewspaper(new Newspaper() { Title = "biaoti", Content = "neirong" });
+
+            A.ReadNewspaper();
+
+            C1.ReadNewspaper();
+		}
+		```
+35. 如下语法可以将多播委托单个执行
+	```cs
+	foreach (Action\<Newspaper> handler in subscribers.GetInvocationList())
+	//其中subscribers是多播委托
+	```
+36. 扩展方法
+	用静态类和静态方法去扩展已经封闭分类代码
+37. 
