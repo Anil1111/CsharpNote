@@ -13,21 +13,8 @@ namespace Video
     {
         static void Main(string[] args)
         {
-            double radius;
-            double area;
-
-            Console.WriteLine("Enter the radius of the circle:");
-            radius = double.Parse(Console.ReadLine());
-
-            if(radius >=0)
-            {
-                area = Math.PI * radius * radius;
-                Console.WriteLine($"The areaaaaa of the circle is: {area:0.00}");
-            }
-            else
-                Console.WriteLine($"{radius} is not a valid radius");
 
             Console.ReadKey();
         }
-    }
+   }
 }
