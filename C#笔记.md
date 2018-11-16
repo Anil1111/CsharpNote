@@ -20,8 +20,8 @@
     ```
     ToUpper()方法具有返回值，但是在执行过程中不会改变本来的字符串的值，如果相对数据进行更改，需要对变量名称进行重新赋值。
 5. string和stringBuilger
- - string在需要大量进行重复操作字符串时候耗时较长
- - stringBuilder相比于string速度会有明显提升
+- string在需要大量进行重复操作字符串时候耗时较长
+- stringBuilder相比于string速度会有明显提升
 	```cs
 	using System.Diagnostics;
     Stopwatch timer = new Stopwatch();
@@ -54,7 +54,7 @@
     //out:无字符显示
     ```
 7. 数据转换
- - 显式转换--由高到低
+- 显式转换--由高到低
  	```cs
     long a = 1;
     int b = 2;
@@ -77,7 +77,7 @@
     }
     //out:抛出数据溢出异常
     ```
- - 隐式转换--由低到高
+- 隐式转换--由低到高
  	```cs
     long a = 1;
     int b = 2;
@@ -90,15 +90,13 @@
     Console.WriteLine(a);
     //out:2147483648
     ```
- - 函数转换
- 	- Parse():将数字形式的字符串转换成字面值与之等价的32位整形，功能类似python中的int()函数
+- 函数转换
+	- Parse():将数字形式的字符串转换成字面值与之等价的32位整形，功能类似python中的int()函数
  		```cs
         var str1 = Console.ReadLine();
         var str2 = Console.ReadLine();
-
         int a1 = int.Parse(str1);
         int a2 = int.Parse(str2);
-
         Console.WriteLine(a1 + a2);
         // in: "1"  "2"
         // out: 3
@@ -285,7 +283,6 @@
 					item.SetNewspaper(newspaper);
 				}
 			}
-
 		}
 		Main()
 		{
@@ -301,11 +298,8 @@
             publisher.Subscribers.Add(B);
             publisher.Subscribers.Add(C1);
             publisher.Subscribers.Add(C2);
-
             publisher.SendNewspaper(new Newspaper() { Title = "biaoti", Content = "neirong" });
-
             A.ReadNewspaper();
-
             C1.ReadNewspaper();
 		}
 		```
