@@ -13,28 +13,43 @@ namespace Video
     {
         static void Main(string[] args)
         {
-            Employee employee1 = new Employee("zhu", "shuai", "Too Little");
-            Console.WriteLine(employee1.Salary);
-            
-            
-                            
+            Employee.NextID = 10000;
+            Console.WriteLine("*********************************");
+            Employee employee = new Employee();
+
+            Console.WriteLine(employee.GetFullInfo());
+            Console.WriteLine(MyExtensionMethod.GetFullInfo(employee));
+
+            Console.WriteLine(employee.PI);
+
             Console.ReadKey();
         }
     }
     class Employee
     {
-        public Employee() { }
-        public Employee(string firstName, string latsName, string salary)
+        static Employee()
+        {
+            Console.WriteLine("static constructor!!!");
+        }
+        public Employee(string firstName="zhu", string lastName="shuai")
+        {
+            Initial(firstName, lastName);
+        }
+        private void Initial(string firstName, string lastName)
         {
             FirstName = firstName;
-            LastName = latsName;
-            Salary = salary;
+            LastName = lastName;
+            ID = NextID;
+            NextID++;
         }
+        public readonly double PI = 3.1415926d;
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Salary { get; set; } = "Not enough";
         private string PassWord = "123456";
         private bool IsAutenticated = false;
+        public int ID { get; set; }
+        public static int NextID;
         public string GetName() => FirstName + " " + LastName;
         public void SetName(string newFirstName, string newLastName)
         {
@@ -75,6 +90,11 @@ namespace Video
                 else
                     throw new Exception();
             }
+        }
+        public string GetFullInfo()
+        {
+            string str = "InClassMethod";
+            return $"{FirstName} {LastName}({ID}) {Salary} {str}";
         }
     }
     class DataStorage
