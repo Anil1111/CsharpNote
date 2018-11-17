@@ -9,45 +9,102 @@ using System.Collections;
 
 namespace Video
 {
-    class  A
-    {
-        public A(int a)
-        {
-            this.a = a;
-        }
-        public int a;
-    }
     class Program
     {
         static void Main(string[] args)
         {
-            string reverse, palindrome;
-            char[] temp;
-
-            Console.WriteLine("Enter a palindrome:");
-            palindrome = Console.ReadLine();
-            reverse = palindrome.Replace(" ", ",");
-            temp = reverse.ToCharArray();
-
-            Array.Reverse(temp);
-
-            if(reverse == new string(temp))
-            {
-                Console.WriteLine($"\"{palindrome}\" is a palindrome.");
-            }
-            else
-                Console.WriteLine($"\"{palindrome}\" is not a palindrome.");
-
-            string str = new string('1', '2');
-            Console.WriteLine(str);
-            decimal d1 = 0.123456789123456789M;
-            Console.WriteLine(d1);
-
+            Employee employee1 = new Employee("zhu", "shuai", "Too Little");
+            Console.WriteLine(employee1.Salary);
+            
+            
+                            
             Console.ReadKey();
         }
-<<<<<<< HEAD
     }
-=======
-   }
->>>>>>> d055a9cb27800dc0ac9a776106a71acd4d318f98
+    class Employee
+    {
+        public Employee() { }
+        public Employee(string firstName, string latsName, string salary)
+        {
+            FirstName = firstName;
+            LastName = latsName;
+            Salary = salary;
+        }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Salary { get; set; } = "Not enough";
+        private string PassWord = "123456";
+        private bool IsAutenticated = false;
+        public string GetName() => FirstName + " " + LastName;
+        public void SetName(string newFirstName, string newLastName)
+        {
+            FirstName = newFirstName;
+            LastName = newLastName;
+            Console.WriteLine($"Name changed to '{GetName()}'");
+        }
+        public void Save()
+        {
+            DataStorage.Store(this);
+        }
+        public bool Logon(string passWord)
+        {
+            IsAutenticated = false;
+            if (passWord == PassWord)
+                IsAutenticated = true;
+            return IsAutenticated;
+        }
+        public bool GetIsAutenticated()
+        {
+            return IsAutenticated;
+        }
+        public string name
+        {
+            get
+            {
+                return $"{FirstName} {LastName}";
+            }
+            set
+            {
+                string[] names;
+                names = value.Split(new char[] {' '});
+                if (names.Length == 2)
+                {
+                    FirstName = names[0];
+                    LastName = names[1];
+                }
+                else
+                    throw new Exception();
+            }
+        }
+    }
+    class DataStorage
+    {
+        public static void Store(Employee employee)
+        {
+            FileStream stream = new FileStream(employee.FirstName + employee.LastName + ".dat", FileMode.Create);
+            StreamWriter writer = new StreamWriter(stream);
+
+            writer.WriteLine(employee.FirstName);
+            writer.WriteLine(employee.LastName);
+            writer.WriteLine(employee.Salary);
+
+            writer.Close();
+        }
+
+        public static Employee load(string filePath)
+        {
+            Employee employee = new Employee();
+
+            FileStream stream = new FileStream(filePath, FileMode.Open);
+
+            StreamReader reader = new StreamReader(stream);
+            employee.FirstName = reader.ReadLine();
+            employee.LastName = reader.ReadLine();
+            employee.Salary = reader.ReadLine();
+
+            reader.Close();
+
+            return employee;
+        }
+    }
 }
