@@ -9,23 +9,23 @@ using System.Collections;
 
 namespace Video
 {
-    class Program
+    public partial class Program
     {
+
         static void Main(string[] args)
         {
-            Employee.NextID = 10000;
-            Console.WriteLine("*********************************");
+            //string[] str = { "start", "123", "zhu", "shuai" };
+            //CommandLine cl = new CommandLine(str);
+            //cl.Display();
+
             Employee employee = new Employee();
-
-            Console.WriteLine(employee.GetFullInfo());
-            Console.WriteLine(MyExtensionMethod.GetFullInfo(employee));
-
-            Console.WriteLine(employee.PI);
-
+            //Console.WriteLine(employee.FirstName+employee.LastName);
+            //employee.GetFullInfo();
+            
             Console.ReadKey();
         }
     }
-    class Employee
+    public partial class Employee
     {
         static Employee()
         {
@@ -96,7 +96,8 @@ namespace Video
             string str = "InClassMethod";
             return $"{FirstName} {LastName}({ID}) {Salary} {str}";
         }
-    }
+        partial void GetIdandSalary();
+}
     class DataStorage
     {
         public static void Store(Employee employee)
