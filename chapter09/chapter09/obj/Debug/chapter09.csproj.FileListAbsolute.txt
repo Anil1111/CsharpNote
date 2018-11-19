@@ -1,7 +1,0 @@
-D:\DATA\file\C#\chapter09\chapter09\bin\Debug\chapter09.exe.config
-D:\DATA\file\C#\chapter09\chapter09\bin\Debug\chapter09.exe
-D:\DATA\file\C#\chapter09\chapter09\bin\Debug\chapter09.pdb
-D:\DATA\file\C#\chapter09\chapter09\obj\Debug\chapter09.csprojAssemblyReference.cache
-D:\DATA\file\C#\chapter09\chapter09\obj\Debug\chapter09.csproj.CoreCompileInputs.cache
-D:\DATA\file\C#\chapter09\chapter09\obj\Debug\chapter09.exe
-D:\DATA\file\C#\chapter09\chapter09\obj\Debug\chapter09.pdb

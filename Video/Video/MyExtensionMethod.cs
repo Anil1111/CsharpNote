@@ -14,5 +14,10 @@ namespace Video
             string str = "MyExtensionMethod";
             return $"{employee.FirstName} {employee.LastName}({employee.ID}) {employee.Salary} {str}";
         }
+        public static string Describe(this Animal ani)
+        {
+            string str = "MyExtensionMethod";
+            return $"{ani.Name} {ani.Age} {str}";
+        }
     }
 }

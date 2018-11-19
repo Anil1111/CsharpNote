@@ -9,123 +9,110 @@ using System.Collections;
 
 namespace Video
 {
+    interface IListable
+    {
+        string[] ColumnValues{ get; }
+    }
     public partial class Program
     {
-
         static void Main(string[] args)
         {
-            //string[] str = { "start", "123", "zhu", "shuai" };
-            //CommandLine cl = new CommandLine(str);
-            //cl.Display();
 
-            Employee employee = new Employee();
-            //Console.WriteLine(employee.FirstName+employee.LastName);
-            //employee.GetFullInfo();
-            
             Console.ReadKey();
         }
     }
-    public partial class Employee
+    public abstract class PdaItem
     {
-        static Employee()
+        public virtual string Name { get; set; }
+        public PdaItem(string name)
         {
-            Console.WriteLine("static constructor!!!");
+            Name = name;
         }
-        public Employee(string firstName="zhu", string lastName="shuai")
-        {
-            Initial(firstName, lastName);
-        }
-        private void Initial(string firstName, string lastName)
+    }
+    class Contact : PdaItem, IListable
+    {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Address { get; set; }
+        public string Phone { get; set; }
+        public Contact(string firstName, string lastName, string address, string phone):base(null)
         {
             FirstName = firstName;
             LastName = lastName;
-            ID = NextID;
-            NextID++;
+            Address = address;
+            Phone = phone;
         }
-        public readonly double PI = 3.1415926d;
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string Salary { get; set; } = "Not enough";
-        private string PassWord = "123456";
-        private bool IsAutenticated = false;
-        public int ID { get; set; }
-        public static int NextID;
-        public string GetName() => FirstName + " " + LastName;
-        public void SetName(string newFirstName, string newLastName)
-        {
-            FirstName = newFirstName;
-            LastName = newLastName;
-            Console.WriteLine($"Name changed to '{GetName()}'");
-        }
-        public void Save()
-        {
-            DataStorage.Store(this);
-        }
-        public bool Logon(string passWord)
-        {
-            IsAutenticated = false;
-            if (passWord == PassWord)
-                IsAutenticated = true;
-            return IsAutenticated;
-        }
-        public bool GetIsAutenticated()
-        {
-            return IsAutenticated;
-        }
-        public string name
+        public string[] ColumnValues
         {
             get
             {
-                return $"{FirstName} {LastName}";
+                return new string[] { FirstName, LastName, Address, Phone };
             }
-            set
+        }
+        public static string[] Headers
+        {
+            get
             {
-                string[] names;
-                names = value.Split(new char[] {' '});
-                if (names.Length == 2)
+                return new string[]
                 {
-                    FirstName = names[0];
-                    LastName = names[1];
-                }
-                else
-                    throw new Exception();
+                    "FirstName","LastName   ",
+                    "Phone      ",
+                    "Address                    "
+                };
             }
         }
-        public string GetFullInfo()
-        {
-            string str = "InClassMethod";
-            return $"{FirstName} {LastName}({ID}) {Salary} {str}";
-        }
-        partial void GetIdandSalary();
-}
-    class DataStorage
+    }
+    class Publication:IListable
     {
-        public static void Store(Employee employee)
+        public Publication(string title, string author, int year)
         {
-            FileStream stream = new FileStream(employee.FirstName + employee.LastName + ".dat", FileMode.Create);
-            StreamWriter writer = new StreamWriter(stream);
+            Title = title;
+            Author = author;
+            Year = year;
+        }
+        public string Title { get; set; }
+        public string Author { get; set; }
+        public int Year { get; set; }
 
-            writer.WriteLine(employee.FirstName);
-            writer.WriteLine(employee.LastName);
-            writer.WriteLine(employee.Salary);
+        public string[] ColumnValues
+        {
+            get
+            {
+                return new string[] { Title, Author, Year.ToString() };
+            }
+        }
+        public static string[] Headers
+        {
+            get
+            {
+                return new string[]
+                {
+                    "Title                          ",
+                    "Author         ",
+                    "Year"
+                };
+            }
+        }
+    }
+    class ConsoleListControl
+    {
+        public static void List(string[] headers, IListable[] items)
+        {
+            int[] columnWidths = DisplayHeaders(headers);
+            for (int count = 0; count < items.Length; count++)
+            {
+                string[] values = items[count].ColumnValues;
+                DisplayItemRow(columnWidths, values);
+            }
+        }
+        private static int[] DisplayHeaders(string[] headers)
+        {
 
-            writer.Close();
         }
 
-        public static Employee load(string filePath)
+        private static void DisplayItemRow(int[] columnWidths, string[] values)
         {
-            Employee employee = new Employee();
 
-            FileStream stream = new FileStream(filePath, FileMode.Open);
-
-            StreamReader reader = new StreamReader(stream);
-            employee.FirstName = reader.ReadLine();
-            employee.LastName = reader.ReadLine();
-            employee.Salary = reader.ReadLine();
-
-            reader.Close();
-
-            return employee;
         }
     }
 }
