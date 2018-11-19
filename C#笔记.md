@@ -44,7 +44,7 @@
     timer.Stop();
     //out:69ms
     ```
-6. 可空修饰
+6. 可空修饰符
 	```cs
     //int num = null;
     //error;
@@ -296,7 +296,7 @@
 			//为出版社添加订阅者
             publisher.Subscribers.Add(A);
             publisher.Subscribers.Add(B);
-            publisher.Subscribers.Add(C1);
+  	        publisher.Subscribers.Add(C1);
             publisher.Subscribers.Add(C2);
             publisher.SendNewspaper(new Newspaper() { Title = "biaoti", Content = "neirong" });
             A.ReadNewspaper();
